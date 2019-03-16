@@ -1,10 +1,11 @@
 /*! _hero.sass Блок */
 
 .hero
-	background: #f1f1f1 url('../img/hero/hero-bg.jpg') no-repeat center top 80px
-	background-size: contain
-	padding-top: 180px
+	background: #f1f1f1 url('../img/hero/hero-bg.jpg') no-repeat center to
+	background-size: cover
+	padding-top: 120px
 	padding-bottom: 270px
+	margin-top: 80px
 	&__title
 		margin-bottom: 40px
 		font-size: 30px
@@ -16,3 +17,7 @@
 	// &__button
 	// 	display: block
 
+@media (max-width: 991px)
+	.hero
+		background-size: 100%
+		background-position: top 0px right

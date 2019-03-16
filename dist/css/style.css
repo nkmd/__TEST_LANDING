@@ -8,6 +8,19 @@
   max-width: 1170px;
   margin: auto; }
 
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px; } }
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 750px; } }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px; } }
+
 /*! _fonts.scss шрифты */
 @font-face {
   font-family: 'Proxima Nova Semibold';
@@ -43,8 +56,7 @@
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between;
-    min-height: 80px; }
+            justify-content: space-between; }
   .navbar__mobile, .navbar__landline {
     text-align: right; }
   .navbar__phone {
@@ -71,13 +83,15 @@
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%); }
+  -webkit-transform: translateY(-200%);
+      -ms-transform: translateY(-200%);
+          transform: translateY(-200%);
+  opacity: 0; }
   .menu_activ {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
-            transform: translateY(0); }
+            transform: translateY(0);
+    opacity: 1; }
   .menu__nav {
     display: -webkit-box;
     display: -webkit-flex;
@@ -138,6 +152,26 @@
   font-size: 14px;
   color: #7b7b79; }
 
+@media (max-width: 991px) {
+  .navbar__mobile, .navbar__landline {
+    display: none; } }
+
+@media (max-width: 576px) {
+  .logo {
+    display: none; }
+  .menu {
+    top: 60px; }
+    .menu-button {
+      height: 60px; }
+    .menu__nav {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .menu__link {
+      margin-bottom: 20px; } }
+
 /*! _interface.sass  Настройки для body, fonts */
 body {
   font-family: 'Proxima Nova Light', sans-serif;
@@ -151,7 +185,7 @@ body {
   text-transform: uppercase;
   color: #507fe1;
   font-family: 'Proxima Nova Semibold', sans-serif;
-  background: #ffffff; }
+  background-color: #ffffff; }
 
 .button {
   border: none;
@@ -161,13 +195,18 @@ body {
   color: #ffffff;
   font-family: 'Proxima Nova Semibold', sans-serif; }
 
+@media (max-width: 576px) {
+  .button-o {
+    font-size: 10px; } }
+
 /*! _hero.sass Блок */
 .hero {
-  background: #f1f1f1 url("../img/hero/hero-bg.jpg") no-repeat center top 80px;
-  -webkit-background-size: contain;
-          background-size: contain;
-  padding-top: 180px;
-  padding-bottom: 270px; }
+  background: #f1f1f1 url("../img/hero/hero-bg.jpg") no-repeat center to;
+  -webkit-background-size: cover;
+          background-size: cover;
+  padding-top: 120px;
+  padding-bottom: 270px;
+  margin-top: 80px; }
   .hero__title {
     margin-bottom: 40px;
     font-size: 30px; }
@@ -176,3 +215,9 @@ body {
     margin-bottom: 67px;
     font-size: 30px;
     font-family: 'Proxima Nova Semibold', sans-serif; }
+
+@media (max-width: 991px) {
+  .hero {
+    -webkit-background-size: 100% 100%;
+            background-size: 100%;
+    background-position: top 0px right; } }
