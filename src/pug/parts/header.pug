@@ -1,4 +1,71 @@
-h2 это HEADER.PUG
-.container
-	p aaa888
-	strong 444
+// header
+header
+	.header
+		// menu
+		.menu
+			.container
+				nav.menu__nav 
+					|
+					a.menu__link(href="#") Главная
+					|
+					| 
+					a.menu__link(href="#") Продукция
+					|
+					| 
+					a.menu__link(href="#") Примеры Работ
+					|
+					| 
+					a.menu__link(href="#") Примерка изображений
+					|
+					| 
+					a.menu__link(href="#") Стоимость дилерам
+					|
+					| 
+					a.menu__link(href="#") О Скинали
+		// /.menu
+
+		.navbar
+			.container 
+				.navbar-wrap
+					button.menu-button.navbar__menu-button 
+						|
+						span.menu-button__line
+						|
+						| 
+						span.menu-button__line
+						|
+						| 
+						span.menu-button__line
+					.logo.navbar__logo 
+						|
+						strong.logo__text Фабрика скинали №1
+						|
+						| 
+						span.logo__description Ведущий производитель скинали
+					.navbar__mobile 
+						|
+						a.navbar__phone(href="tel:+987654321") +7 992 987-654-321
+						|
+						| 
+						span.navbar__work-time.navbar__small-text  Без выходных
+					.navbar__landline 
+						|
+						a.navbar__phone(href="tel:+123456789") +7 299 123-456-789
+						|
+						| 
+						a.navbar__email.navbar__small-text(href="mailto:info@domain.ltd") info@domain.ltd
+					button.button-o.navbar__button Получить консультацию
+		// /.navbar
+
+	// .hero
+	.hero
+		.container
+			h1.hero__title Гарантия <br> минимальной цены <br> на скинали
+			|
+			|
+			span.hero__subtitle От 3 000 р/м2
+			button.button.hero__button Заказать скинали
+	// ./hero
+
+// /.header
+
