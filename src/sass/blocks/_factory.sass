@@ -1,0 +1,25 @@
+/*! _factory.sass Блок */
+
+.factory
+	&-block 
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		&__image
+			//flex-basis: 50%
+			margin: 20px 0			
+		&__text	
+			margin-left: 73px
+			flex-basis: 50%
+			font-size: 20px
+
+@media (max-width: 991px)
+	.factory
+		&-block 
+			justify-content: space-around
+			&__image
+			//	flex-basis: 40%	
+			&__text	
+				//margin-left: 0px
+				flex-basis: 90%	
+
