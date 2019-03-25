@@ -1,6 +1,6 @@
 // OFFER section 
 
-section.offer.bg-secondary
+section.offer.bg-secondary#offer
 	.container
 		.offer__block.offer-block.offer-block_calc-bg
 			h2.offer__title Оставьте заявку на расчёт
@@ -12,7 +12,14 @@ section.offer.bg-secondary
 				.form__row
 					.form__group
 						label.form__label(for="") Вид стекла
-						input.input.form__input(type="text")
+						// "select"
+						input(type="hidden" name="type" id="select-type" value="С печатью")
+						.select.form__select
+							.select_checked С печатью
+							ul.select__dropdown
+								li.select__option(data-value="С печатью") С печатью
+								li.select__option(data-value="Без печати") Без печати
+						// ./"select"
 					.form__group
 						label.form__label(for="") Ширина см.
 						input.input.form__input(type="text")

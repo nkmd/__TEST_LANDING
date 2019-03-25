@@ -62,6 +62,46 @@ img
 	padding-left: 30px
 	border: 1px solid #dddddd
 
+// стилизация псевдо select -а
+.select
+	height: 80px
+	//padding-left: 30px
+	border: 1px solid #dddddd
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		z-index: 9
+		top: 50%
+		transform: translateY(-50%)
+		right: 20px
+		width: 26px
+		height: 26px
+		background: url("../img/drop-down.png") no-repeat center
+		background-size: 100%
+	&:hover
+		cursor: pointer
+
+	&_checked
+		line-height: 80px
+		padding-left: 30px
+	&__dropdown
+		position: absolute
+		top: 80px
+		width: 100%
+		background-color: #fff
+		border: 1px solid #dddddd
+		margin: 0
+		list-style: none
+		padding: 0
+		display: none
+		&_open
+			display: block
+	&__option
+		padding: 20px
+		&:hover
+			background-color: $bg-secondary
+
 // стилизация checkbox 
 // (custom css checkbox https://codepen.io/GeoffreyCrofte/pen/BiHzp )
 //input[type="checkbox"]

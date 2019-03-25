@@ -5,8 +5,11 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		title Фабрика панелей скинали
-		link(rel="stylesheet", href="css/normalize.css")
+		link(rel="stylesheet", href="vendor/normalize/normalize.css")
 		link(rel="stylesheet", href="css/style.css")
+		link(rel="stylesheet", href="vendor/twentytwenty/css/twentytwenty.css")
+		link(rel="stylesheet", href="vendor/slick/slick.css")
+
 
 	body 
 		|
@@ -32,7 +35,7 @@ html(lang="en")
 			include parts/steps.pug
 			|
 			|
-			include parts/befo-after.pug		
+			include parts/before-after.pug		
 			|
 			|
 			include parts/reviews.pug
@@ -44,6 +47,27 @@ html(lang="en")
 			include parts/factory.pug
 			|
 			|
-			include parts/contacts.pug																				
+			include parts/contacts.pug
+			|
+			|
+			include parts/questions.pug		
+			|
+			|
+			include parts/footer.pug			
+	
+	// Jquery Scripts (2.2.4 !!!)
+	// script(src="vendor/jquery/dist/jquery.min.js")
+	// script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+	script(src="vendor/jquery/jquery.min_2.2.4.js")
+	// twentytwenty plugin
+	script(src="vendor/twentytwenty/js/jquery.twentytwenty.js")
+	script(src="vendor/twentytwenty/js/jquery.event.move.js")
+	// slick slider plugin
+	script(src="vendor/slick/slick.min.js")
+	// 
+	script(src="vendor/jquery_maskedinput/dist/jquery.maskedinput.min.js")
+	// main
+	script(src="js/main.js")
+
 // ----------
-// 1-30
+// 1-06

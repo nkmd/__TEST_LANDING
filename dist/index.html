@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Фабрика панелей скинали</title>
-    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="vendor/normalize/normalize.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="vendor/twentytwenty/css/twentytwenty.css"/>
+    <link rel="stylesheet" href="vendor/slick/slick.css"/>
   </head>
   <body>
      
@@ -18,7 +20,7 @@
           <div class="container">
             <nav class="menu__nav">
                <a class="menu__link" href="#">Главная</a>
-               <a class="menu__link" href="#">Продукция</a>
+               <a class="menu__link" href="#features">Преимущества</a>
                <a class="menu__link" href="#">Каталог</a>
                <a class="menu__link" href="#">Примеры Работ</a>
                <a class="menu__link" href="#">Примерка изображений</a>
@@ -48,7 +50,7 @@
                  <a class="navbar__phone" href="tel:+123456789">+7 299 123-456-789</a>
                  <a class="navbar__email navbar__small-text" href="mailto:info@domain.ltd">info@domain.ltd</a>
               </div>
-              <button class="button-o navbar__button">Получить консультацию</button>
+              <!-- button.button-o.navbar__button Получить консультацию--><a class="button-o navbar__button" href="#offer">Получить консультацию</a>
             </div>
           </div>
         </div>
@@ -59,7 +61,7 @@
         <div class="container">
           <h1 class="hero__title">Гарантия <br> минимальной цены <br> на скинали</h1>
           <span class="hero__subtitle">От 3 000 р/м2</span>
-          <button class="button hero__button">Заказать скинали</button>
+          <!-- button.button.hero__button Заказать скинали--><a class="button hero__button" href="#offer">Заказать скинали</a>
         </div>
       </div>
       <!-- ./hero-->
@@ -68,7 +70,7 @@
     
     <main> 
       <!-- OFFER section -->
-      <section class="offer bg-secondary">
+      <section class="offer bg-secondary" id="offer">
         <div class="container">
           <div class="offer__block offer-block offer-block_calc-bg">
             <h2 class="offer__title">Оставьте заявку на расчёт</h2>
@@ -78,7 +80,16 @@
               <div class="form__row">
                 <div class="form__group">
                   <label class="form__label" for="">Вид стекла</label>
-                  <input class="input form__input" type="text"/>
+                  <!-- "select"-->
+                  <input type="hidden" name="type" id="select-type" value="С печатью"/>
+                  <div class="select form__select">
+                    <div class="select_checked">С печатью</div>
+                    <ul class="select__dropdown">
+                      <li class="select__option" data-value="С печатью">С печатью</li>
+                      <li class="select__option" data-value="Без печати">Без печати</li>
+                    </ul>
+                  </div>
+                  <!-- ./"select"-->
                 </div>
                 <div class="form__group">
                   <label class="form__label" for="">Ширина см.</label>
@@ -121,7 +132,7 @@
       <!-- ./OFFER section -->
       
       <!-- FEATURES Section-->
-      <section class="features section">
+      <section class="features section" id="features">
         <div class="container">
           <h2 class="section-title section__title">Наши преимущества</h2>
           <div class="features-block">
@@ -430,7 +441,34 @@
       <!-- ./STEPS Section-->
       
       <!-- BEFORE-AFTER Section-->
-      <!-- BEFORE-AFTER Section-->
+      <!-- плагины https://zurb.com/playground/twentytwenty http://kenwheeler.github.io/slick/-->
+      <section class="section before">
+        <div class="container">
+          <h2 class="section-title section__title">До и после</h2>
+          <div class="before-slider-wrap">
+            <div class="before-slider">
+              <!-- slide 1-->
+              <div class="before-slider__item">
+                <div class="before-after"><img src="img/before-slider/sample-before.png"/><img src="img/before-slider/sample-after.png"/></div>
+              </div>
+              <!-- slide 2-->
+              <div class="before-slider__item">
+                <div class="before-after"><img src="img/before-slider/sample-before-2.png"/><img src="img/before-slider/sample-after-2.png"/></div>
+              </div>
+              <!-- slide 3-->
+              <div class="before-slider__item">
+                <div class="before-after"><img src="img/before-slider/sample-before-3.png"/><img src="img/before-slider/sample-after-3.png"/></div>
+              </div>
+            </div>
+            <!-- arrows-->
+            <div class="before-slider-arrows">
+              <button class="arrow arrow-left"><img src="img/before-slider/left-arrows.png"/></button>
+              <button class="arrow arrow-right"><img src="img/before-slider/right-arrows.png"/></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ./BEFORE-AFTER Section-->
       
       <!-- REVIEWS Section-->
       <section class="section reviews">
@@ -468,7 +506,7 @@
                   <input class="input form__input" type="text" placeholder="Ваше имя"/>
                 </div>
                 <div class="form__group">
-                  <input class="input form__input" type="text" placeholder="Ваш телефон"/>
+                  <input class="input form__input" type="tel" placeholder="Ваш телефон"/>
                 </div>
                 <div class="form__group">
                   <input class="input form__input" type="text" placeholder="Ваша цена"/>
@@ -516,7 +554,7 @@
       <!-- CONTACTS Section-->
       <section class="section contacts">
         <div class="container">
-          <h2 class="sectiion-title section__title">Контакты</h2>
+          <h2 class="section-title section__title">Контакты</h2>
           <div class="contacts-block">
             <!-- contacts 1-->
             <div class="contacts-block__item"><img class="contacts__image" src="img/contacts/contact-1.png" alt=""/>
@@ -535,9 +573,51 @@
           </div>
         </div>
       </section>
+      <!-- yandex map-->
+      <div class="map" id="map">
+         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A14b6e83551c5a476b80caeb25f1f406fc1a56b37b564328403a9001becd0d4ab&amp;width=100%25&amp;height=410&amp;lang=ru_RU&amp;scroll=false"></script></div>
       <!-- ./CONTACTS Section-->
+      
+      <!-- QUESTIONS Section-->
+      <section class="section questions">
+        <div class="container">
+          <div class="questions-block">
+            <h3 class="questions__title">Остались вопросы ?</h3><a class="questions__link" href="#">Задайте их менеджеру</a>
+          </div>
+        </div>
+      </section>
+      <!-- ./QUESTIONS Section-->
+      
+      <!-- FOOTER Section-->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-block">
+            <div class="footer__description">
+              <h4 class="footer__title"> Фабрика скинали №1</h4><span class="footer__subtitle"> ведущий производитель скинали	</span><span class="footer__copy"> &copy; 2019 Com LTD </span>
+            </div>
+            <div class="footer__pay-info"><img class="footer__pay-logo" src="img/footer/money-1.png" alt=""/><img class="footer__pay-logo" src="img/footer/money-2.png" alt=""/><img class="footer__pay-logo" src="img/footer/money-3.png" alt=""/><img class="footer__pay-logo" src="img/footer/money-4.png" alt=""/></div>
+            <div class="footer__contacts"> <a class="footer__phone">+7 992 987-654-321 </a><a class="footer__mail">info@domain.ltd</a>
+              <div class="footer-social"><a class="footer-social__link" href="#"><img class="footer-social__image" src="img/footer/vk.png"/></a><a class="footer-social__link" href="#"><img class="footer-social__image" src="img/footer/fb.png"/></a><a class="footer-social__link" href="#"><img class="footer-social__image" src="img/footer/tw.png"/></a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- ./FOOTER Section-->
     </main>
   </body>
+  <!-- Jquery Scripts (2.2.4 !!!)-->
+  <!-- script(src="vendor/jquery/dist/jquery.min.js")-->
+  <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js")-->
+  <script src="vendor/jquery/jquery.min_2.2.4.js"></script>
+  <!-- twentytwenty plugin-->
+  <script src="vendor/twentytwenty/js/jquery.twentytwenty.js"></script>
+  <script src="vendor/twentytwenty/js/jquery.event.move.js"></script>
+  <!-- slick slider plugin-->
+  <script src="vendor/slick/slick.min.js"></script>
+  <!-- -->
+  <script src="vendor/jquery_maskedinput/dist/jquery.maskedinput.min.js"></script>
+  <!-- main-->
+  <script src="js/main.js"></script>
 </html>
 <!-- ------------>
-<!-- 1-30-->
+<!-- 1-06-->
