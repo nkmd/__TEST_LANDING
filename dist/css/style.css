@@ -76,7 +76,7 @@
 
 .menu {
   position: fixed;
-  z-index: 0;
+  z-index: 98;
   top: 80px;
   left: 0;
   width: 100%;
@@ -177,6 +177,25 @@
               flex-direction: column; }
     .menu__link {
       margin-bottom: 20px; } }
+
+@media (max-width: 1199px) {
+  .menu__nav {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
+
+@media (max-width: 768px) {
+  .menu__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .menu__link {
+    margin-bottom: 20px; } }
 
 /*! _interface.sass  Настройки для body, fonts */
 body {

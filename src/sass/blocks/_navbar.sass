@@ -30,7 +30,7 @@
 // меню
 .menu
 	position: fixed
-	z-index: 0
+	z-index: 98
 	top: 80px
 	left: 0
 	width: 100%
@@ -102,4 +102,25 @@
 			flex-direction: column
 		&__link
 			margin-bottom: 20px
+
+
+// __NK fixit
+
+@media (max-width: 1199px)
+	.menu
+		&__nav
+			justify-content: space-around
+			flex-wrap: wrap
+		&__link
+			//border: 1px solid red
+
+// @media (max-width: 991px)	
+@media (max-width: 768px)
+	.menu
+		&__nav
+			flex-direction: column
+		&__link
+			margin-bottom: 20px
+
+
 
