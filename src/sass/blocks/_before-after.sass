@@ -4,11 +4,11 @@
 .before
 	&-slider
 		//margin: auto
+		z-index: 2
 		&-wrap
 			position: relative
 			max-width: 640px
 			margin: auto
-			//border: 1px solid red
 		&-arrows
 			position: absolute
 			display: flex
@@ -16,7 +16,7 @@
 			top: 50%
 			width: 100%
 			transform: translateY(-100%)
-			z-index: -1
+			z-index: 1
 
 		&__dots
 			margin: auto
@@ -39,7 +39,6 @@
 			button
 				display: none
 
-
 .arrow
 	background-color: transparent
 	border: none
@@ -47,5 +46,13 @@
 		outline: none
 	&-left	
 		transform: translateX(-200%)
+		cursor: pointer
+
 	&-right
-		transform: translateX(200%)			
+		transform: translateX(200%)
+		cursor: pointer
+		
+@media (max-width: 768px)
+	.arrow
+		&-left, &-right
+			display: none!important
